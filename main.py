@@ -374,10 +374,10 @@ def github_auth_handler(code: str = Query(...), Authorize: AuthJWT = Depends()):
             redirect_url_success = f"{frontend_url}?access_token={jwt_token}"
             return RedirectResponse(url=redirect_url_success)
         else:
-            redirect_url_failure = "https://superagi.com/"
+            redirect_url_failure = "http://localhost:3000/"
             return RedirectResponse(url=redirect_url_failure)
     else:
-        redirect_url_failure = "https://superagi.com/"
+        redirect_url_failure = "http://localhost:3000/"
         return RedirectResponse(url=redirect_url_failure)
 
 
